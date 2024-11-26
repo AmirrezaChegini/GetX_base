@@ -1,0 +1,3 @@
+class MyTextStyle {
+  const MyTextStyle();
+}

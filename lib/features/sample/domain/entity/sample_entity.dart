@@ -1,0 +1,3 @@
+class SampleEntity {
+  const SampleEntity();
+}
