@@ -1,0 +1,3 @@
+class CoreEntity {
+  const CoreEntity();
+}
