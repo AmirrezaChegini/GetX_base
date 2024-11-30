@@ -2,13 +2,17 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class MyDevice {
+  static const MyDevice _i = MyDevice._internal();
+
+  const MyDevice._internal();
+
+  factory MyDevice() => _i;
+
   /// Device size
   static const double tabletWidth = 754;
   static const double tabletHeight = 658;
   static const double desktopWidth = 1020;
   static const double desktopHeight = 784;
-
-  const MyDevice();
 
   /// Get Device based on width
   static bool isMobile(BuildContext context) {

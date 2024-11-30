@@ -1,4 +1,10 @@
 class BaseResponse {
+  static const BaseResponse _i = BaseResponse._internal();
+
+  const BaseResponse._internal();
+
+  factory BaseResponse() => _i;
+
   static T getData<T>(
     dynamic response,
     T Function(Map<String, dynamic> json) bodyBuilder,

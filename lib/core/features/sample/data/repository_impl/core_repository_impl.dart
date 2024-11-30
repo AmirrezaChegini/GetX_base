@@ -14,7 +14,7 @@ class CoreRepositoryImpl implements ICoreRepository {
   @override
   Future<DataState<CoreEntity, MyException>> getData({required CoreParams params}) async {
     try {
-      CoreEntity response = await datasource.getData(params: params);
+      final CoreEntity response = await datasource.getData(params: params);
       return DataState.success(response);
     } on MyException catch (e) {
       return DataState.error(e);

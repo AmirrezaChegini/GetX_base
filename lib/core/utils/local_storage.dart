@@ -1,7 +1,11 @@
 import 'package:get_storage/get_storage.dart';
 
 class LocalStorage {
-  const LocalStorage();
+  static const LocalStorage _i = LocalStorage._internal();
+
+  const LocalStorage._internal();
+
+  factory LocalStorage() => _i;
 
   static final GetStorage _box = GetStorage();
 

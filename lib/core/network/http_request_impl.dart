@@ -28,7 +28,7 @@ class HttpRequestImpl implements IHttpRequest {
     Map<String, dynamic>? header,
   }) async {
     try {
-      Response response = await _dio.get(
+      final Response response = await _dio.get(
         path,
         data: data,
         queryParameters: queryParameters,
@@ -48,7 +48,7 @@ class HttpRequestImpl implements IHttpRequest {
     Map<String, dynamic>? header,
   }) async {
     try {
-      Response response = await _dio.post(
+      final Response response = await _dio.post(
         path,
         data: data,
         queryParameters: queryParameters,
@@ -68,7 +68,7 @@ class HttpRequestImpl implements IHttpRequest {
     Map<String, dynamic>? header,
   }) async {
     try {
-      Response response = await _dio.put(
+      final Response response = await _dio.put(
         path,
         data: data,
         queryParameters: queryParameters,
@@ -88,7 +88,7 @@ class HttpRequestImpl implements IHttpRequest {
     Map<String, dynamic>? header,
   }) async {
     try {
-      Response response = await _dio.patch(
+      final Response response = await _dio.patch(
         path,
         data: data,
         queryParameters: queryParameters,
@@ -108,7 +108,7 @@ class HttpRequestImpl implements IHttpRequest {
     Map<String, dynamic>? header,
   }) async {
     try {
-      Response response = await _dio.delete(
+      final Response response = await _dio.delete(
         path,
         data: data,
         queryParameters: queryParameters,
@@ -131,7 +131,7 @@ class HttpRequestImpl implements IHttpRequest {
     CancelToken? cancelToken,
   }) async {
     try {
-      Response response = await _dio.request(
+      final Response response = await _dio.request(
         path,
         data: data,
         queryParameters: queryParameters,

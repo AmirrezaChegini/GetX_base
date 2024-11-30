@@ -1,9 +1,13 @@
 import 'package:getx_base/core/features/sample/domain/entity/core_entity.dart';
 
 class CoreModel extends CoreEntity {
-  const CoreModel();
+  const CoreModel({
+    super.id,
+  });
 
   factory CoreModel.fromJson(Map<String, dynamic> json) {
-    return const CoreModel();
+    return CoreModel(
+      id: json['id'],
+    );
   }
 }

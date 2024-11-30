@@ -2,7 +2,11 @@ import 'package:getx_base/core/constants/my_constants.dart';
 import 'package:getx_base/core/utils/local_storage.dart';
 
 class AuthStorage {
-  const AuthStorage();
+  static const AuthStorage _i = AuthStorage._internal();
+
+  const AuthStorage._internal();
+
+  factory AuthStorage() => _i;
 
   static String token = '';
 

@@ -16,7 +16,7 @@ class SampleDatasourceImpl implements ISampleDatasource {
 
   @override
   Future<SampleEntity> getData({required SampleParams params}) async {
-    dynamic response = await httpRequest.get(path: MyApi.baseUrl);
+    final response = await httpRequest.get(path: MyApi.baseUrl);
 
     return BaseResponse.getData<SampleEntity>(
       response,

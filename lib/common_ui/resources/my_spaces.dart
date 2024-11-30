@@ -1,5 +1,9 @@
 class MySpaces {
-  const MySpaces();
+  static const MySpaces _i = MySpaces._internal();
+
+  const MySpaces._internal();
+
+  factory MySpaces() => _i;
 
   static const double s0 = 0;
   static const double s2 = 2;

@@ -1,3 +1,7 @@
 class SampleEntity {
-  const SampleEntity();
+  final int? id;
+
+  const SampleEntity({
+    this.id,
+  });
 }

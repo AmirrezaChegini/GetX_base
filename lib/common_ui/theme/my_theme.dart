@@ -3,7 +3,11 @@ import 'package:getx_base/common_ui/resources/my_colors.dart';
 import 'package:get/get.dart';
 
 class MyTheme {
-  const MyTheme();
+  static const MyTheme _i = MyTheme._internal();
+
+  const MyTheme._internal();
+
+  factory MyTheme() => _i;
 
   static final ThemeData light = ThemeData(
     brightness: Brightness.light,

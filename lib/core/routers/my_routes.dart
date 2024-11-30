@@ -3,7 +3,11 @@ import 'package:getx_base/features/sample/presentation/ui/sample_page.dart';
 import 'package:get/get.dart';
 
 class Routes {
-  const Routes();
+  static const Routes _i = Routes._internal();
+
+  const Routes._internal();
+
+  factory Routes() => _i;
 
   static const String samplePage = '/sample_page';
 }

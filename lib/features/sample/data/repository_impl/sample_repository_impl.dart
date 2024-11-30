@@ -14,7 +14,7 @@ class SampleRepositoryImpl implements ISampleRepository {
   @override
   Future<DataState<SampleEntity, MyException>> getData({required SampleParams params}) async {
     try {
-      SampleEntity response = await datasource.getData(params: params);
+      final SampleEntity response = await datasource.getData(params: params);
       return DataState.success(response);
     } on MyException catch (e) {
       return DataState.error(e);
