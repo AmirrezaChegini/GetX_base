@@ -35,7 +35,7 @@ class MainApp extends StatelessWidget {
       supportedLocales: const [Locale('en', 'US')],
       scrollBehavior: MyScrollBehavior(),
       getPages: appPages,
-      initialRoute: MyRoutes.samplePage,
+      initialRoute: Routes.samplePage,
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
