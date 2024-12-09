@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:getx_base/core/error_handler/my_exception.dart';
-import 'package:getx_base/core/features/sample/data/datasource/core_datasource.dart';
-import 'package:getx_base/core/features/sample/domain/entity/core_entity.dart';
-import 'package:getx_base/core/features/sample/domain/repository/core_repository.dart';
-import 'package:getx_base/core/features/sample/domain/usecases/get_core_usecase.dart';
+import 'package:getx_base/core/features/core/data/datasource/core_datasource.dart';
+import 'package:getx_base/core/features/core/domain/entity/core_entity.dart';
+import 'package:getx_base/core/features/core/domain/repository/core_repository.dart';
+import 'package:getx_base/core/features/core/domain/usecases/get_core_usecase.dart';
 import 'package:getx_base/core/utils/data_state.dart';
 
 class CoreRepositoryImpl implements ICoreRepository {

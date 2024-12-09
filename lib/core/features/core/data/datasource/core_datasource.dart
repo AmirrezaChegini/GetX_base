@@ -1,7 +1,7 @@
 import 'package:getx_base/core/constants/my_api.dart';
-import 'package:getx_base/core/features/sample/data/model/core_model.dart';
-import 'package:getx_base/core/features/sample/domain/entity/core_entity.dart';
-import 'package:getx_base/core/features/sample/domain/usecases/get_core_usecase.dart';
+import 'package:getx_base/core/features/core/data/model/core_model.dart';
+import 'package:getx_base/core/features/core/domain/entity/core_entity.dart';
+import 'package:getx_base/core/features/core/domain/usecases/get_core_usecase.dart';
 import 'package:getx_base/core/network/http_request.dart';
 import 'package:getx_base/core/response/base_response.dart';
 

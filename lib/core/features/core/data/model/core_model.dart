@@ -1,4 +1,4 @@
-import 'package:getx_base/core/features/sample/domain/entity/core_entity.dart';
+import 'package:getx_base/core/features/core/domain/entity/core_entity.dart';
 
 class CoreModel extends CoreEntity {
   const CoreModel({
