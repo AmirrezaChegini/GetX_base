@@ -16,7 +16,9 @@ class CoreDatasourceImpl implements ICoreDatasource {
 
   @override
   Future<CoreEntity> getData({required CoreParams params}) async {
-    final response = await httpRequest.get(path: MyApi.baseUrl);
+    final response = await httpRequest.get(
+      path: MyApi.baseUrl,
+    );
 
     return BaseResponse.getData<CoreEntity>(
       response,

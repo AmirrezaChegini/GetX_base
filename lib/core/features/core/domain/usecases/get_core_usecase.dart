@@ -16,9 +16,15 @@ class GetCoreUseCase implements UseCase<CoreEntity, CoreParams> {
 }
 
 class CoreParams {
-  const CoreParams();
+  int? id;
 
-  CoreParams copyWith() {
-    return const CoreParams();
+  CoreParams({this.id});
+
+  CoreParams copyWith({int? id}) {
+    return CoreParams(
+      id: id ?? this.id,
+    );
   }
+
+  void nullID() => id = null;
 }

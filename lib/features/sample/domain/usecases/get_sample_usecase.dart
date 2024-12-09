@@ -16,9 +16,17 @@ class GetSampleUseCase implements UseCase<SampleEntity, SampleParams> {
 }
 
 class SampleParams {
-  const SampleParams();
+  int? id;
 
-  SampleParams copyWith() {
-    return const SampleParams();
+  SampleParams({this.id});
+
+  SampleParams copyWith({
+    int? id,
+  }) {
+    return SampleParams(
+      id: id ?? this.id,
+    );
   }
+
+  void nullID() => id = null;
 }

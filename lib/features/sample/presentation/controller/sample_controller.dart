@@ -4,33 +4,21 @@ import 'package:getx_base/features/sample/domain/usecases/get_sample_usecase.dar
 import 'package:get/get.dart';
 
 class SampleController extends GetxController with StateMixin {
-  /// ------------------Variables--------------------
-  final Rx<SampleParams> sampleParams = Rx(const SampleParams());
-  SampleEntity sampleEntity = const SampleEntity();
-
-  /// ------------------Controllers------------------
-
-  /// --------------------Status---------------------
-
-  /// --------------------UseCases-------------------
-  final GetSampleUseCase getSampleUseCase;
-
   /// ------------------Constructor------------------
   SampleController(
     this.getSampleUseCase,
   );
 
-  @override
-  void onInit() {
-    super.onInit();
-    change(NoParams(), status: RxStatus.success());
-  }
+  /// --------------------UseCases-------------------
+  final GetSampleUseCase getSampleUseCase;
 
-  @override
-  void onClose() {
-    // TODO: implement onClose
-    super.onClose();
-  }
+  /// ------------------Variables--------------------
+  final Rx<SampleParams> sampleParams = Rx(SampleParams());
+  SampleEntity sampleEntity = const SampleEntity();
+
+  /// ------------------Controllers------------------
+
+  /// --------------------Status---------------------
 
   /// -------------------Functions-------------------
   void changeSampleParams() {
@@ -53,5 +41,17 @@ class SampleController extends GetxController with StateMixin {
   void _rightGetSample(SampleEntity data) {
     change(NoParams(), status: RxStatus.success());
     sampleEntity = data;
+  }
+
+  @override
+  void onInit() {
+    super.onInit();
+    change(NoParams(), status: RxStatus.success());
+  }
+
+  @override
+  void onClose() {
+    // TODO: implement onClose
+    super.onClose();
   }
 }
