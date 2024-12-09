@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:getx_base/common_ui/theme/my_theme.dart';
 import 'package:getx_base/core/auth_storage/auth_storage.dart';
@@ -14,7 +13,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Future.wait([
-    dotenv.load(),
     GetStorage.init(),
   ]);
   AuthStorage.loadData();
