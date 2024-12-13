@@ -1,0 +1,89 @@
+image: ghcr.io/cirruslabs/flutter:stable
+
+stages:
+  - test
+  - analyze
+  - build
+  - deploy
+
+test:
+  stage: test
+  only:
+    - merge_requests
+  before_script:
+    - flutter clean
+    - flutter pub get
+    - flutter pub global activate junitreport
+    - export PATH="$PATH:$HOME/.pub-cache/bin"
+  script:
+    - flutter test --coverage ./lib
+  artifacts:
+    paths:
+      - coverage
+
+analyze:
+  stage: analyze
+  needs:
+    - test
+  only:
+    - merge_requests
+  script:
+    - flutter clean
+    - flutter pub get
+    - dart fix --dry-run
+    - dart fix --apply
+    - flutter analyze
+
+build_android:
+  stage: build
+  only:
+    - develop
+  before_script:
+    - flutter clean
+    - rm pubspec.lock
+    - flutter pub get
+  script:
+    - flutter build apk --release
+  artifacts:
+    paths:
+      - build/app/outputs/apk/release/app-release.apk
+    expire_in: 14 days
+
+build_web:
+  stage: build
+  only:
+    - develop
+  before_script:
+    - flutter clean
+    - flutter pub get
+  script:
+    - flutter build web
+  artifacts:
+    paths:
+      - build/web
+    expire_in: 14 days
+
+deploy_android:
+  stage: deploy
+  needs:
+    - build_android
+  only:
+    - develop
+  script:
+    - |
+      curl --header "JOB-TOKEN: $CI_JOB_TOKEN" \
+         --upload-file build/app/outputs/apk/release/app-release.apk \
+         --url "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/Android-Release/1.0.0/app-release.apk"
+
+pages:
+  stage: deploy
+  image: alpine:latest
+  needs:
+    - build_web
+  only:
+    - develop
+  script:
+    - cp -r build/web public
+  artifacts:
+    paths:
+      - public
